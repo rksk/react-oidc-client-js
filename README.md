@@ -32,3 +32,34 @@
 ## App preview
 
 ![Logo](docs/Images/react-oidc-client-screenshot.png)
+
+
+
+
+<Resource context="(.*)/oauth2/oidcdiscovery/(.*)" secured="false" http-method="GET"/>
+
+
+    <filter>
+        <filter-name>CORS</filter-name>
+        <filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
+        <init-param>
+            <param-name>cors.allowOrigin</param-name>
+            <param-value>http://localhost:3000</param-value>
+        </init-param>
+    </filter>
+    
+    
+    <filter-mapping>
+        <filter-name>CORS</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>HttpHeaderSecurityFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
+        <init-param>
+            <param-name>hstsEnabled</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </filter>
+
