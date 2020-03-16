@@ -35,9 +35,10 @@
 
 
 
-
+```
 <Resource context="(.*)/oauth2/oidcdiscovery/(.*)" secured="false" http-method="GET"/>
-
+```
+```
 
     <filter>
         <filter-name>CORS</filter-name>
@@ -62,4 +63,4 @@
             <param-value>false</param-value>
         </init-param>
     </filter>
-
+```
